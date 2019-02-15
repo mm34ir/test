@@ -1,9 +1,7 @@
 <?php
 ob_start();
-header('Content-Type: application/json');
 define('API_KEY','Your Token');
 $ch = 'Channel id';
-//echo file_get_contents('https://api.telegram.org/bot'.API_KEY.'/setwebhook?url='.$_SERVER["SCRIPT_URI"]);
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
