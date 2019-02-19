@@ -46,3 +46,12 @@ function jsen($data){
 function jsde($data,$var=true){
     return json_decode($data,$vaaar);   
 }
+function calculator($textbox){
+            //  Preg_match function to match the patern and express the result
+            if(preg_match('/(?:\-?[0-9]+(?:\.?[0-9]+)?[\+\-\*\/]+)+\-?[0-9]+(?:\.?[0-9]+)?/', $textbox, $matchpattern)){
+                return faddition($matchpattern[0]);
+            }
+            return 0;
+        
+        return $textbox;
+    }
