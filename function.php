@@ -49,11 +49,16 @@ function jsde($data,$var=true){
 function calculator($textbox){
             //  Preg_match function to match the patern and express the result
             if(preg_match('/(?:\-?[0-9]+(?:\.?[0-9]+)?[\+\-\*\/]+)+\-?[0-9]+(?:\.?[0-9]+)?/', $textbox, $matchpattern)){
+                // need faddition function
                 return faddition($matchpattern[0]);
             }
             return 0;
         
         return $textbox;
+    }
+function faddition($textbox){
+        $n = create_function(' ', 'return '.$textbox.';');
+        return $n();
     }
 function realFilename($url){
    $headers      = get_headers($url, 1);
