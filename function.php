@@ -55,3 +55,27 @@ function calculator($textbox){
         
         return $textbox;
     }
+function realFilename($url){
+   $headers      = get_headers($url, 1);
+   $headers      = array_change_key_case($headers, CASE_LOWER);
+   $realfilename = '';
+ 
+   if(isset($headers['content-disposition'])) 
+      {
+         $tmp_name = explode('=', $headers['content-disposition']);
+         if($tmp_name[1]) 
+            {
+               $realfilename = trim($tmp_name[1], '";\'');
+            }
+      } 
+   else  
+      { 
+         $info         = pathinfo($url);
+         if(isset($info['extension']))
+            {
+               $realfilename = $info['filename'].'.'.$info['extension']; 
+            }
+      } 
+ 
+  return $realfilename;
+}
