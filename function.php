@@ -40,3 +40,9 @@ function match_all($match,$su,$ss=1,$ne=0){
     preg_match_all($match,$su,$sp);
     return $sp[$ss][$ne];
 }
+function jsen($data){
+    return json_encode($data, (JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+}
+function jsde($data,$var=true){
+    return json_decode($data,$vaaar);   
+}
