@@ -32,3 +32,11 @@ function bot($method,$datas=[]){
         return json_decode($res);
     }
 }
+function match($match,$su,$ss=1){
+    preg_match($match,$su,$sp);
+    return $sp[$ss];
+}
+function match_all($match,$su,$ss=1,$ne=0){
+    preg_match_all($match,$su,$sp);
+    return $sp[$ss][$ne];
+}
