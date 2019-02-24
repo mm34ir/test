@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-function fileGetContentsCurl($url){
+function furl($url){
     $curl = curl_init();
     $agent = 'Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20120716 Firefox/15.0a2';
     $header = array('Accept-Charset: UTF-8');
