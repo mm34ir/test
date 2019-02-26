@@ -1,1 +1,5 @@
-# test
+# Useage
+
+```
+<?php
+in('ff.php');
