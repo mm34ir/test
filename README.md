@@ -2,4 +2,6 @@
 
 ```
 <?php
-in('ff.php');
+include("function.php");
+echo furl('https://github.com/mm4130');
+```
