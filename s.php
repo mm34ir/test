@@ -2,9 +2,8 @@
 ob_start();
 //token ro inja vared konid
 header('Content-Type: application/json');
-define('API_KEY','740467555:AAFFliqQiLltnV2i3Ek3KNnmCu1EZ_CkuDI');
-$ADMIN = 399130642;
-$pc = '-1001127647729';
+define('API_KEY','XXXX:XXXXXX');
+$pc = '-XXXXX';
 //echo file_get_contents('https://api.telegram.org/bot'.API_KEY.'/setwebhook?url='.$_SERVER["SCRIPT_URI"]);
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
