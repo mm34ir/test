@@ -44,7 +44,7 @@ function jsen($data){
     return json_encode($data, (JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 }
 function jsde($data,$var=true){
-    return json_decode($data,$vaaar);   
+    return json_decode($data,$var);   
 }
 function calculator($textbox){
             //  Preg_match function to match the patern and express the result
