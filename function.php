@@ -84,3 +84,14 @@ function realFilename($url){
  
   return $realfilename;
 }
+function unzip($file,$path){
+     $zip = new ZipArchive;  
+     $res = $zip->open($file);  
+     if ($res === TRUE) {  
+         $zip->extractTo($path.'/');  
+         $zip->close();  
+         return 'ok';  
+     } else {  
+         return 'failed';  
+     }  
+}
