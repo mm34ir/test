@@ -95,3 +95,22 @@ function unzip($file,$path){
          return 'failed';  
      }  
 }
+function un_sh($url){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HEADER, 1);
+	$response = curl_exec($ch);
+	$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+	$headers = substr($response, 0, $header_size);
+	$body = substr($response, $header_size);
+	curl_close($ch);
+	preg_match('/location:\s(.*?)\n/m', $headers, $uum);
+	return $uum[1];
+}
+function tim ($time){
+	$time = str_replace('/','',$time);
+	$time = str_replace('-','',$time);
+	$time = strtotime($time);
+	return date('r', $time);
+}
