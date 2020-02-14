@@ -1,5 +1,6 @@
 <?php
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
+header("Content-Type:text/plain; charset=UTF-8");
 function furl($url){
     $curl = curl_init();
     $agent = 'Mozilla/5.0 (Windows NT 6.1; rv:15.0) Gecko/20120716 Firefox/15.0a2';
@@ -18,6 +19,14 @@ function furl($url){
     $data = curl_exec($curl);
     curl_close($curl);
     return $data;
+}
+function get_tag($start_tag, $end_tag, $data){
+	$search = strpos($data, $start_tag);
+	$sub = substr($data, $search);
+	$length = strlen($end_tag);
+	$end = strpos($sub, $end_tag);
+	$new_data = substr($sub, 0,$end+$length);
+	return $new_data;
 }
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
